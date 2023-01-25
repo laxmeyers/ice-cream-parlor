@@ -33,7 +33,7 @@ const containers = [{
     price: 4
 }]
 
-function drawStore(){
+function drawToppings(){
     let toppingElem = document.getElementById('topping-cards')
     let template = ''
 
@@ -49,7 +49,7 @@ function drawStore(){
           <div class="d-flex justify-content-between">
           <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
           </div>
-            <button onclick="addToCart('')" class="btn btn-primary">Go somewhere</button>
+            <button onclick="addToCart('${p.name}')" class="btn btn-primary">Go somewhere</button>
           </div>
         </div>
       </div>`
@@ -58,13 +58,65 @@ function drawStore(){
     toppingElem.innerHTML = template
 }
 
+function drawVessels(){
+    let vesselElem = document.getElementById('vessel-cards')
+    let template = ''
+
+    containers.forEach(p => {
+        template += `<div class="col-4">
+        <div class="card">
+          <img
+            src="${p.image}"
+            class="card-img-top"
+            alt="${p.name}"
+          />
+          <div class="card-body">
+          <div class="d-flex justify-content-between">
+          <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
+          </div>
+            <button onclick="addToCart('${p.name}')" class="btn btn-primary">Go somewhere</button>
+          </div>
+        </div>
+      </div>`
+    })
+
+    vesselElem.innerHTML = template
+}
+
+function drawIceCream(){
+    let iceCreamElem = document.getElementById('ice-cream-cards')
+    let template = ''
+
+    iceCream.forEach(p => {
+        template += `<div class="col-4">
+        <div class="card">
+          <img
+            src="${p.image}"
+            class="card-img-top"
+            alt="${p.name}"
+          />
+          <div class="card-body">
+          <div class="d-flex justify-content-between">
+          <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
+          </div>
+            <button onclick="addToCart('${p.name}')" class="btn btn-primary">Go somewhere</button>
+          </div>
+        </div>
+      </div>`
+    })
+
+    iceCreamElem.innerHTML = template
+}
+
 function drawCart(){
 
 }
 
-function addToCart(){
+function addToCart(name){
 
 }
 
 
-drawStore()
+drawToppings()
+drawVessels()
+drawIceCream()
