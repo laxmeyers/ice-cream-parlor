@@ -51,7 +51,7 @@ function drawToppings(){
           <div class="d-flex justify-content-between">
           <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
           </div>
-            <button onclick="addToCart('${p.name}')" class="btn btn-primary">Go somewhere</button>
+            <button onclick="addToCart('${p.name}')" class="btn btn-primary">ADD</button>
           </div>
         </div>
       </div>`
@@ -76,7 +76,7 @@ function drawVessels(){
           <div class="d-flex justify-content-between">
           <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
           </div>
-            <button onclick="addToCart('${p.name}')" class="btn btn-primary">Go somewhere</button>
+            <button onclick="addToCart('${p.name}')" class="btn btn-primary">ADD</button>
           </div>
         </div>
       </div>`
@@ -101,7 +101,7 @@ function drawIceCream(){
           <div class="d-flex justify-content-between">
           <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
           </div>
-            <button onclick="addToCart('${p.name}')" class="btn btn-primary">Go somewhere</button>
+            <button onclick="addToCart('${p.name}')" class="btn btn-primary">ADD</button>
           </div>
         </div>
       </div>`
