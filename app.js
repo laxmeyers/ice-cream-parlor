@@ -65,10 +65,10 @@ function drawCart(){
     let template = ''
 
     cart.forEach(p => {
-        template += `<div class="col-4"><h4>${p.name}</h4></div>
-        <div class="col-3"><h4>${p.quantity}</h4></div>
-        <div class="col-2"><h4>$${p.price}</h4></div>
-        <div class="col-3"><h4>${p.price * p.quantity}</h4></div>`
+        template += `<div class="col-4 p-3"><h4>${p.name}</h4></div>
+        <div class="col-3 p-3"><h4>${p.quantity}</h4></div>
+        <div class="col-2 p-3"><h4>$${p.price}</h4></div>
+        <div class="col-3 p-3"><h4>${p.price * p.quantity}</h4></div>`
     })
 
     cartElem.innerHTML = template
