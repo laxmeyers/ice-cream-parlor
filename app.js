@@ -35,11 +35,11 @@ const containers = [{
 
 let cart = []
 
-function drawToppings(){
-    let toppingElem = document.getElementById('topping-cards')
+function drawToppings(id, array){
+    let toppingElem = document.getElementById(`${id}`)
     let template = ''
 
-    toppings.forEach(p => {
+    array.forEach(p => {
         template += `<div class="col-4">
         <div class="card">
           <img
@@ -60,65 +60,58 @@ function drawToppings(){
     toppingElem.innerHTML = template
 }
 
-function drawVessels(){
-    let vesselElem = document.getElementById('vessel-cards')
-    let template = ''
-
-    containers.forEach(p => {
-        template += `<div class="col-4">
-        <div class="card">
-          <img
-            src="${p.image}"
-            class="card-img-top"
-            alt="${p.name}"
-          />
-          <div class="card-body">
-          <div class="d-flex justify-content-between">
-          <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
-          </div>
-            <button onclick="addToCart('${p.name}')" class="btn btn-primary">ADD</button>
-          </div>
-        </div>
-      </div>`
-    })
-
-    vesselElem.innerHTML = template
-}
-
-function drawIceCream(){
-    let iceCreamElem = document.getElementById('ice-cream-cards')
-    let template = ''
-
-    iceCream.forEach(p => {
-        template += `<div class="col-4">
-        <div class="card">
-          <img
-            src="${p.image}"
-            class="card-img-top"
-            alt="${p.name}"
-          />
-          <div class="card-body">
-          <div class="d-flex justify-content-between">
-          <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
-          </div>
-            <button onclick="addToCart('${p.name}')" class="btn btn-primary">ADD</button>
-          </div>
-        </div>
-      </div>`
-    })
-
-    iceCreamElem.innerHTML = template
-}
-
 function drawCart(){
+    let cartElem = document.getElementById('cart')
+    let template = ''
 
+    cart.forEach(p => {
+        template += `<div class="col-4"><h4>${p.name}</h4></div>
+        <div class="col-3"><h4>${p.quantity}</h4></div>
+        <div class="col-2"><h4>$${p.price}</h4></div>
+        <div class="col-3"><h4>${p.price * p.quantity}</h4></div>`
+    })
+
+    cartElem.innerHTML = template
 }
 
 function addToCart(name){
-    console.log(name);
+    let toppingItem = toppings.find(p => p.name == name)
+    let vesselItem = containers.find(p => p.name == name)
+    let iceCreamItem = iceCream.find(p => p.name == name)
+
+    let productFound = cart.find(p => p.name == name)
+
+    if (productFound){
+        productFound.quantity++
+    }else{
+        if(toppingItem){
+            cart.push({
+                name: toppingItem.name,
+                price: toppingItem.price,
+                quantity: 1
+            })
+        } else if (vesselItem){
+            cart.push({
+                name: vesselItem.name,
+                price: vesselItem.price,
+                quantity: 1
+            })
+        } else {
+            cart.push({
+                name: iceCreamItem.name,
+                price: iceCreamItem.price,
+                quantity: 1
+            })
+        }
+    }
+
+
+    drawCart()
+
 }
 
 
-drawToppings()
-drawVessels()
-drawIceCream()
+
+drawToppings("topping-cards", toppings)
+drawToppings("vessel-cards", containers)
+drawToppings("ice-cream-cards", iceCream)
