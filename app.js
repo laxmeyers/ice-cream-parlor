@@ -72,6 +72,7 @@ function drawCart(){
     })
 
     cartElem.innerHTML = template
+    total()
 }
 
 function addToCart(name){
@@ -110,6 +111,20 @@ function addToCart(name){
 
 }
 
+function total(){
+    let total = document.getElementById('total')
+    let totalCost = 0
+    cart.forEach(p => {
+        totalCost += p.price * p.quantity
+    })
+
+    total.innerText = totalCost
+}
+
+function buy(){
+    cart = []
+    drawCart()
+}
 
 
 drawToppings("topping-cards", toppings)
