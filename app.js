@@ -33,6 +33,8 @@ const containers = [{
     price: 4
 }]
 
+let cart = []
+
 function drawToppings(){
     let toppingElem = document.getElementById('topping-cards')
     let template = ''
@@ -113,7 +115,7 @@ function drawCart(){
 }
 
 function addToCart(name){
-
+    console.log(name);
 }
 
 
