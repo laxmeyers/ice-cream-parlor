@@ -23,7 +23,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Ice Cream Parlor</title>
     <style>
       body.debug .container,
@@ -31,12 +31,12 @@
         outline: 2px double blue;
         outline-offset: -2px;
       }
-    
+
       body.debug .row {
         outline: 2px dashed red;
         outline-offset: -2px;
       }
-    
+
       body.debug [class*="col-"] {
         outline: 2px dotted forestgreen;
         outline-offset: -3px;
@@ -45,48 +45,48 @@
   </head>
   <body>
     <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Andrew's Frozen Yogurt🍦</h1>
-                </div>
-            </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h1>Andrew's Frozen Yogurt🍦</h1>
+          </div>
         </div>
+      </div>
     </header>
 
     <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-5 bg-light cart">
-
+      <div class="container">
+        <div class="row">
+          <div class="col-5 bg-light cart"></div>
+          <div class="col-7 store">
+            <h2>Toppings</h2>
+            <div class="row justify-content-center" id="topping-cards">
+              <!-- <div class="col-md-6 col-lg-4 my-3">
+                <h2>Toppings</h2>
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/100"
+                    class="card-img-top"
+                    alt="sprinkles card"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Sprinkles <span>$9.99</span></h5>
+                    <button onclick="addToCart('')" class="btn btn-primary">Go somewhere</button>
+                  </div>
                 </div>
-                <div class="col-7 store">
-                    <div class="row" id="topping-cards">
-                        <div class="col-4">
-                            <h2>Toppings</h2>
-                            <div class="card">
-                                <img src="https://via.placeholder.com/100" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Sprinkles <span>9.99</span></h5> 
-                                  <button class="btn btn-primary">Go somewhere</button>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-
-                </div>
+              </div> -->
             </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <footer>
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-12">
-                    made with help
-                </div>
-            </div>
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-12">made with help</div>
         </div>
+      </div>
     </footer>
 
     <script src="app.js"></script>

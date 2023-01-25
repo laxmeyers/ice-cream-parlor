@@ -32,3 +32,39 @@ const containers = [{
     image: 'http://images.wbmason.com/350/L_JOY66050.jpg',
     price: 4
 }]
+
+function drawStore(){
+    let toppingElem = document.getElementById('topping-cards')
+    let template = ''
+
+    toppings.forEach(p => {
+        template += `<div class="col-4">
+        <div class="card">
+          <img
+            src="${p.image}"
+            class="card-img-top"
+            alt="${p.name}"
+          />
+          <div class="card-body">
+          <div class="d-flex justify-content-between">
+          <h5 class="card-title">${p.name}</h5> <span class="text-end">$${p.price}</span>
+          </div>
+            <button onclick="addToCart('')" class="btn btn-primary">Go somewhere</button>
+          </div>
+        </div>
+      </div>`
+    })
+
+    toppingElem.innerHTML = template
+}
+
+function drawCart(){
+
+}
+
+function addToCart(){
+
+}
+
+
+drawStore()
