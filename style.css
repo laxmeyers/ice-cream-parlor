@@ -10,5 +10,10 @@ main{
 }
 
 .cart{
-    height: calc(100vh - 80px);
+    height: calc(100vh - 112px);
+}
+
+.fixed{
+    position: fixed;
+    /* transform: translateY(56px); */
 }
